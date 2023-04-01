@@ -356,6 +356,7 @@ class FlashSelfAttention(torch.nn.Module):
         output = rearrange(output, '(b s) ... -> b s ...', b=batch_size)
         return output
 
+# head attention for 。。。
 
 class ParallelAttention(MegatronModule):
     """Parallel self-attention layer abstract class.
@@ -473,6 +474,7 @@ class ParallelAttention(MegatronModule):
     def forward(self, hidden_states, attention_mask,
                 encoder_output=None, inference_params=None):
         # hidden_states: [sq, b, h]
+        # sequence batch hidden_size
 
         # =================================================
         # Pre-allocate memory for key-values for inference.
